@@ -6,9 +6,9 @@
     "height": 700,
     "title": {
       "text": "IMF Lending Outstanding ",
-      "subtitle": "Loans issued to all members, 1984-2022. Source: IMF",
-      "subtitleFontStyle": "Graphik",
-      "subtitleFontSize": 20,
+      "subtitle": "Loans issued to member nations (1984-2022). Source: IMF",
+      "subtitleFontStyle": "Italic",
+      "subtitleFontSize": 10,
       "anchor": "start",
       "color": "white",
       "subtitleColor":"white"
