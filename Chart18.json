@@ -16,12 +16,12 @@
     "data": [
       {
         "name": "source_1",
-        "url": "https://raw.githubusercontent.com/av1vs/av1vs.github.io/main/week7datageo.json",
+        "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/week7datageo.json",
         "format": {"property": "features", "type": "json"}
       },
       {
         "name": "source_0",
-        "url": "https://raw.githubusercontent.com/av1vs/av1vs.github.io/main/wk7final.csv",
+        "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/wk7final.csv",
         "format": {"type": "csv"},
         "transform": [
           {"type": "formula", "expr": "toNumber(yearSelector)", "as": "yearS"},
