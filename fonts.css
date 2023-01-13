@@ -1,39 +1,20 @@
-/* Set the background color for my page: */
-body{
-    background-color: #222222;
- 
-}
-
-
-/* Choose the appearance of the tags, h1, h3 and p: */
-h1, p{
-    color:#FFFFFF    ;
-    font-family: 'Graphik';
-    text-align: Left;
-}
-
- h3, p{
-    color:#FFFFFF    ;
-    font-family: 'Graphik';
-    text-align: Left;
-}
-    
-.myWeek1{
-    margin: auto;
-    max-width: 600px;
-    background-color: #222222;
-}
-
-
-/* Set the apperance of the class, chart */
-.chart{
-    background-color: #222222;
-    width:330px;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 0px;
-    border-color: #222222;
-
-    
-}
-    
+@font-face {
+  font-family: 'Graphik-regular';
+  src: url(../fonts/Graphik-Regular.eot);
+    src: url(../fonts/Graphik-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Graphik-Regular.woff) format("woff"), url(../fonts/Graphik-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal; }
+  
+  @font-face {
+    font-family: 'Graphik-semibold';
+    src: url(../fonts/Graphik-Semibold.eot);
+    src: url(../fonts/Graphik-Semibold.eot?#iefix) format("embedded-opentype"), url(../fonts/Graphik-Semibold.woff) format("woff"), url(../fonts/Graphik-Semibold.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal; }
+  
+  @font-face {
+    font-family: 'Graphik-medium';
+    src: url(../fonts/Graphik-Medium.eot);
+    src: url(../fonts/Graphik-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/Graphik-Medium.woff) format("woff"), url(../fonts/Graphik-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal; }
