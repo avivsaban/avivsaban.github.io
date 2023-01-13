@@ -1,0 +1,154 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "background": {"signal": "null"},
+    "padding": 5,
+    "width": 700,
+    "height": 700,
+    "title": {
+      "text": "Average weekly household expenditure in the UK (£)",
+      "subtitle": ["From the financial year ending 2019 to 2021. Source: ONS"],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "white",
+      "subtitleColor": "#white"
+    },
+    "style": "cell",
+    "data": [
+      {
+        "name": "source_0",
+        "url": "https://raw.githubusercontent.com/av1vs/av1vs.github.io/main/week9final3.csv",
+        "format": {"type": "csv", "delimiter": ","},
+        "transform": [
+          {
+            "type": "stack",
+            "groupby": ["Quintile"],
+            "field": "Value",
+            "sort": {"field": ["Item"], "order": ["descending"]},
+            "as": ["Value_start", "Value_end"],
+            "offset": "zero"
+          },
+          {
+            "type": "filter",
+            "expr": "isValid(datum[\"Value\"]) && isFinite(+datum[\"Value\"])"
+          }
+        ]
+      }
+    ],
+    "marks": [
+      {
+        "name": "marks",
+        "type": "rect",
+        "style": ["bar"],
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "fill": {"scale": "color", "field": "Item"},
+            "tooltip": {
+              "signal": "{\"Quintile\": isValid(datum[\"Quintile\"]) ? datum[\"Quintile\"] : \"\"+datum[\"Quintile\"], \"Item\": isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"], \"Value\": format(datum[\"Value\"], \"\")}"
+            },
+            "ariaRoleDescription": {"value": "bar"},
+            "description": {
+              "signal": "\"Quintile: \" + (isValid(datum[\"Quintile\"]) ? datum[\"Quintile\"] : \"\"+datum[\"Quintile\"]) + \"; Value: \" + (format(datum[\"Value\"], \"\")) + \"; Items: \" + (isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"]) + \"; Item: \" + (isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"])"
+            },
+            "x": {"scale": "x", "field": "Quintile"},
+            "width": {"signal": "max(0.25, bandwidth('x'))"},
+            "y": {"scale": "y", "field": "Value_end"},
+            "y2": {"scale": "y", "field": "Value_start"}
+          }
+        }
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "band",
+        "domain": {"data": "source_0", "field": "Quintile"},
+        "range": [0, {"signal": "width"}],
+        "paddingInner": 0.1,
+        "paddingOuter": 0.05
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "domain": [0, 750],
+        "range": [{"signal": "height"}, 0],
+        "zero": true
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": [
+          "Food & non-alcoholic drinks",
+          "Alcoholic drinks, tobacco & narcotics",
+          "Clothing & footwear",
+          "Housing, fuel & power",
+          "Household goods & services",
+          "Health",
+          "Transport",
+          "Communication",
+          "Recreation & culture",
+          "Education",
+          "Restaurants & hotels",
+          "Miscellaneous goods & services",
+          "Other expenditure items"
+        ],
+        "range": [
+          "#F8EDE3",
+          "#DFD3C3",
+          "#D0B8A8",
+          "#85586F",
+          "#65647C",
+          "#8B7E74",
+          "#C7BCA1",
+          "#F1D3B3",
+          "#F5EBE0",
+          "#F0DBDB",
+          "#DBA39A",
+          "#E97777",
+          "#FF9F9F"
+        ]
+      }
+    ],
+    "axes": [
+      {
+        "scale": "y",
+        "orient": "left",
+        "gridScale": "x",
+        "grid": null,
+        "tickCount": {"signal": "ceil(height/40)"},
+        "domain": false,
+        "labels": false,
+        "labelColor": "white",
+        "aria": false,
+        "maxExtent": 0,
+        "minExtent": 0,
+        "ticks": false,
+        "zindex": 0
+      },
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "grid": false,
+        "title": "Quintile",
+        "titleColor": "white",
+        "labelAlign": "right",
+        "labelAngle": 270,
+        "labelColor": "white",
+        "labelBaseline": "middle",
+        "zindex": 0
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "grid": false,
+        "labelOverlap": true,
+        "labelColor": "white",
+        "title": "Amount spent (£)",
+        "titleColor": "white",
+        "tickCount": {"signal": "ceil(height/40)"},
+        "zindex": 0
+      }
+    ],
+    "legends": [{"fill": "color", "symbolType": "circle", "title": "Item", "labelColor": "white", "labelFontSize": "12", "titleColor": "white"}]
+}

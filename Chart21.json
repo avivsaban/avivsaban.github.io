@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 700,
+  "height": 700,
+  "title": {
+      "text": "Relationship between students in post-compulsory education* and disposable income in European countries",
+      "subtitle": ["* as a % of the total population of post-compulsory school age. Source: Eurostat"],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black",
+      "subtitleColor": "black"
+    },
+  "style": "cell",
+  "data": [
+    {"name": "source_0", "url": "https://raw.githubusercontent.com/av1vs/av1vs.github.io/main/csvjson.json"},
+    {
+      "name": "data_0",
+      "source": "source_0"
+    },
+    {
+      "name": "data_1",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "regression",
+          "x": "Students in post-compulsory education %",
+          "y": "Disposable income",
+          "as": ["Students in post-compulsory education %", "Disposable income"]
+        }
+      ]
+    },
+    {
+      "name": "data_2",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "regression",
+          "x": "Students in post-compulsory education %",
+          "y": "Disposable income",
+          "params": true,
+          "as": ["Students in post-compulsory education %", "Disposable income"]
+        },
+        {
+          "type": "formula",
+          "expr": "'R²: '+format(datum.rSquared, '.2f')",
+          "as": "R2"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "symbol",
+      "style": ["point"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "fill": {"value": "#4c78a8"},
+          "tooltip": {
+            "signal": "{\"Country\": isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"], \"Students in post-compulsory education %\": isValid(datum[\"Students in post-compulsory education %\"]) ? datum[\"Students in post-compulsory education %\"] : \"\"+datum[\"Students in post-compulsory education %\"], \"Disposable income\": format(datum[\"Disposable income\"], \"\")}"
+          },
+
+          "ariaRoleDescription": {"value": "point"},
+          "description": {
+            "signal": "\"Students in post-compulsory education %: \" + (format(datum[\"Students in post-compulsory education %\"], \"\")) + \"; Disposable income: \" + (format(datum[\"Disposable income\"], \"\"))"
+          },
+          "x": {"scale": "x", "field": "Students in post-compulsory education %"},
+          "y": {"scale": "y", "field": "Disposable income"}
+        }
+      }
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "line",
+      "style": ["line"],
+      "sort": {"field": "datum[\"Students in post-compulsory education %\"]"},
+      "from": {"data": "data_1"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "firebrick"},
+          "description": {
+            "signal": "\"Students in post-compulsory education %: \" + (format(datum[\"Students in post-compulsory education %\"], \"\")) + \"; Disposable income: \" + (format(datum[\"Disposable income\"], \"\"))"
+          },
+          "x": {"scale": "x", "field": "Students in post-compulsory education %"},
+          "y": {"scale": "y", "field": "Disposable income"},
+          "defined": {
+            "signal": "isValid(datum[\"Students in post-compulsory education %\"]) && isFinite(+datum[\"Students in post-compulsory education %\"]) && isValid(datum[\"Disposable income\"]) && isFinite(+datum[\"Disposable income\"])"
+          }
+        }
+      }
+    },
+    {
+      "name": "layer_2_marks",
+      "type": "text",
+      "style": ["text"],
+      "from": {"data": "data_2"},
+      "encode": {
+        "update": {
+          "align": {"value": "right"},
+          "fill": {"value": "firebrick"},
+          "description": {
+            "signal": "\"R2: \" + (isValid(datum[\"R2\"]) ? datum[\"R2\"] : \"\"+datum[\"R2\"])"
+          },
+          "x": {"field": {"group": "width"}},
+          "y": {"value": -5},
+          "text": {
+            "signal": "isValid(datum[\"R2\"]) ? datum[\"R2\"] : \"\"+datum[\"R2\"]"
+          },
+          "baseline": {"value": "middle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_0", "field": "Students in post-compulsory education %"},
+          {"data": "data_1", "field": "Students in post-compulsory education %"}
+        ]
+      },
+      "range": [0, {"signal": "width"}],
+      "nice": true,
+      "zero": true
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_0", "field": "Disposable income"},
+          {"data": "data_1", "field": "Disposable income"}
+        ]
+      },
+      "range": [{"signal": "height"}, 0],
+      "nice": true,
+      "zero": true
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "gridScale": "y",
+      "grid": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "gridScale": "x",
+      "grid": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Students in post-compulsory education %",
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Disposable income",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 0
+    }
+  ]
+  
+}

@@ -1,0 +1,231 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "background": {"signal": "null"},
+    "padding": 5,
+    "width": 700,
+    "height": 700,
+    "title": {
+      "text": "Aging populations",
+      "titleColor": "white",
+      "subtitle": "Share of popluation that is ages 65+. Source: UN. S Korea=blue",
+      "subtitleFontStyle": "Arial",
+      "labelFontStyle": "Graphik",
+      "titleFontStyle": "Graphik",
+      "FontSize": 100,
+      "subtitleFontSize": 20,
+      "anchor": "start",
+      "color": "white",
+      "subtitleColor": "white"
+    },
+    "style": "cell",
+    "data": [
+      {"name": "Region_store"},
+      {
+        "name": "source_0",
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/data/demographicsUN.csv",
+        "format": {"type": "csv", "parse": {"Year": "date"}, "delimiter": ","},
+        "transform": [
+          {
+            "type": "filter",
+            "expr": "!(length(data(\"Region_store\"))) || (vlSelectionTest(\"Region_store\", datum))"
+          }
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "name": "unit",
+        "value": {},
+        "on": [
+          {"events": "mousemove", "update": "isTuple(group()) ? group() : unit"}
+        ]
+      },
+      {
+        "name": "Region_Region",
+          "labelColor": "white",
+        "value": null,
+        "bind": {
+          "input": "select",
+          "options": [
+            "All countries",
+            "Australia",
+            "Bangladesh",
+            "Brazil",
+            "Canada",
+            "Chile",
+            "China",
+            "Democratic Republic of the Congo",
+            "France",
+            "India",
+            "Indonesia",
+            "Italy",
+            "France",
+            "Japan",
+            "Republic of Korea",
+            "Spain",
+            "United Kingdom",
+            "United States of America"
+          ],
+          "name": "Select a country    "
+        }
+      },
+      {
+        "name": "Region",
+        "update": "vlSelectionResolve(\"Region_store\", \"union\")"
+      },
+      {
+        "name": "Region_tuple",
+        "update": "Region_Region !== null ? {fields: Region_tuple_fields, values: [Region_Region]} : null"
+      },
+      {
+        "name": "Region_tuple_fields",
+        "value": [{"type": "E", "field": "Region"}]
+      },
+      {
+        "name": "Region_modify",
+        "on": [
+          {
+            "events": {"signal": "Region_tuple"},
+            "update": "modify(\"Region_store\", Region_tuple, true)"
+          }
+        ]
+      }
+    ],
+    "marks": [
+      {
+        "name": "pathgroup",
+        "type": "group",
+        "from": {
+          "facet": {
+            "name": "faceted_path_main",
+            "data": "source_0",
+            "groupby": ["Region"]
+          }
+        },
+        "encode": {
+          "update": {
+            "width": {"field": {"group": "width"}},
+            "height": {"field": {"group": "height"}}
+          }
+        },
+        "marks": [
+          {
+            "name": "marks",
+            "type": "line",
+            "style": ["line"],
+            "sort": {"field": "datum[\"Year\"]"},
+            "interactive": true,
+            "from": {"data": "faceted_path_main"},
+            "encode": {
+              "update": {
+                "width": {"value": 10},
+                "stroke": {"scale": "color", "field": "Region"},
+                "description": {
+                  "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; sh_65+: \" + (format(datum[\"sh_65+\"], \"\")) + \"; Region: \" + (isValid(datum[\"Region\"]) ? datum[\"Region\"] : \"\"+datum[\"Region\"])"
+                },
+                "x": {"scale": "x", "field": "Year"},
+                "y": {"scale": "y", "field": "sh_65+"},
+                "defined": {
+                  "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"sh_65+\"]) && isFinite(+datum[\"sh_65+\"])"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "time",
+        "domain": {"data": "source_0", "field": "Year"},
+        "range": [0, {"signal": "width"}]
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "labelColor": "white",
+        "domain": {"data": "source_0", "field": "sh_65+"},
+        "range": [{"signal": "height"}, 0],
+        "nice": true,
+        "zero": true
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": {"data": "source_0", "field": "Region", "sort": true},
+        "range": [
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "blue",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6",
+          "#C1D0E6"
+        ]
+      }
+    ],
+    "axes": [
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "gridScale": "y",
+        "grid": null,
+        "tickCount": {"signal": "ceil(width/40)"},
+        "domain": false,
+        "labels": false,
+        "aria": false,
+        "maxExtent": 0,
+        "minExtent": 0,
+        "ticks": false,
+        "zindex": 0
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "gridScale": "x",
+        "grid": null,
+        "tickCount": {"signal": "ceil(height/40)"},
+        "domain": false,
+        "labels": false,
+        "aria": false,
+        "maxExtent": 0,
+        "minExtent": 0,
+        "ticks": false,
+        "zindex": 0
+      },
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "grid": null,
+        "title": "Year",
+        "titleColor": "white",
+        "labelFlush": true,
+        "labelColor": "white",
+        "labelOverlap": true,
+        "tickCount": {"signal": "ceil(width/40)"},
+        "zindex": 0
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "grid": null,
+        "labelOverlap": true,
+        "labelColor": "white",
+        "tickCount": {"signal": "ceil(height/40)"},
+        "zindex": 0
+      }
+    ],
+    "legends": [{"stroke": "color", "symbolType": "stroke", "title": "Region", "labelColor": "white", "titleColor": "white", "labelFontSize":15, "titleFontSize": 15}]
+  }

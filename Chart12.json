@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "background": {"signal": "null"},
+    "padding": 5,
+    "width": 350,
+    "height": 350,
+    "title": {
+      "text": "Processed & preserved fish, crustaceans & molluscs",
+      "subtitle": "Data source: ONS (2022)",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "white",
+      "subtitleColor": "white"
+    },
+    "style": "cell",
+    "data": [
+      {
+        "name": "source_0",
+        "url": "https://raw.githubusercontent.com/av1vs/av1vs.github.io/main/WEEK5_ONS_p45y.json",
+        "format": {"type": "json", "property": "years", "parse": {"date": "date"}}
+      }
+    ],
+    "marks": [
+      {
+        "name": "marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"date\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "stroke": {"value": "#C1E1C"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"date\"], '%b %d, %Y')) + \"; Value: \" + (format(datum[\"value\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "date"},
+            "y": {"scale": "y", "field": "value"},
+            "defined": {
+              "signal": "isValid(datum[\"date\"]) && isFinite(+datum[\"date\"]) && isValid(datum[\"value\"]) && isFinite(+datum[\"value\"])"
+            }
+          }
+        }
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "time",
+        "domain": {"data": "source_0", "field": "date"},
+        "range": [0, {"signal": "width"}]
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "domain": {"data": "source_0", "field": "value"},
+        "range": [{"signal": "height"}, 0],
+        "nice": true,
+        "zero": true
+      }
+    ],
+    "axes": [
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "grid": false,
+        "title": "Year",
+        "titleColor": "white",
+        "labelFlush": true,
+        "labelOverlap": true,
+        "labelColor": "white",
+        "tickCount": {"signal": "ceil(width/40)"},
+        "zindex": 0
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "grid": false,
+        "title": "Value",
+        "titleColor": "white",
+        "labelOverlap": true,
+        "labelColor": "white",
+        "tickCount": {"signal": "ceil(height/40)"},
+        "zindex": 0
+      }
+    ]
+  }

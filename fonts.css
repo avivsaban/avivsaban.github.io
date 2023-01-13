@@ -1,0 +1,39 @@
+/* Set the background color for my page: */
+body{
+    background-color: #222222;
+ 
+}
+
+
+/* Choose the appearance of the tags, h1, h3 and p: */
+h1, p{
+    color:#FFFFFF    ;
+    font-family: 'Graphik';
+    text-align: Left;
+}
+
+ h3, p{
+    color:#FFFFFF    ;
+    font-family: 'Graphik';
+    text-align: Left;
+}
+    
+.myWeek1{
+    margin: auto;
+    max-width: 600px;
+    background-color: #222222;
+}
+
+
+/* Set the apperance of the class, chart */
+.chart{
+    background-color: #222222;
+    width:330px;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 0px;
+    border-color: #222222;
+
+    
+}
+    

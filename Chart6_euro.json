@@ -1,0 +1,968 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+    "data":          {
+          "name": "source_0",
+          "values": [
+   {
+     "Date": "2020-Q1",
+     "Value": 115.49,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 117.04,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 119.62,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 122.23,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 123.49,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 125.71,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 129.42,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 129.61,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 131.47,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 133.18,
+     "Country": "Belgium"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 133.8,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 136.2,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 140.3,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 144.3,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 146.3,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 151.8,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 158.2,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 162.5,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 163.2,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 167.3,
+     "Country": "Germany"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 135.98,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 128.1,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 131.08,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 136.01,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 144.93,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 148.69,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 153.71,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 163.78,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 175.37,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 189.36,
+     "Country": "Estonia"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 126.92,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 126.98,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 128.56,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 127.55,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 128.12,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 131.15,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 133.92,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 135.58,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 139.05,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 141.71,
+     "Country": "Spain"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 113.87,
+     "Country": "France"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 115.52,
+     "Country": "France"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 117.8,
+     "Country": "France"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 119.27,
+     "Country": "France"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 120.15,
+     "Country": "France"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 122.12,
+     "Country": "France"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 126.11,
+     "Country": "France"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 127.52,
+     "Country": "France"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 128.6,
+     "Country": "France"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 130.78,
+     "Country": "France"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 128.25,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 130.57,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 129.75,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 132.95,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 134.19,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 139.03,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 141.44,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 144.99,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 152.25,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 157.94,
+     "Country": "Croatia"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 99.4,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 102.4,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 99.8,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 100,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 101.1,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 102.8,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 103.9,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 104,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 105.7,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 108.1,
+     "Country": "Italy"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 109.13,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 109.48,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 104.21,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 109.1,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 102.84,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 104.23,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 106.8,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 103.44,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 103.95,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 106.35,
+     "Country": "Cyprus"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 145.77,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 142.3,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 147.08,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 147.92,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 149.97,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 159.51,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 165.31,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 171.79,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 176.06,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 185.76,
+     "Country": "Latvia"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 137.26,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 140.25,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 140.85,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 146.35,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 153.69,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 158.87,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 167.44,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 175.36,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 183.12,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 193.91,
+     "Country": "Lithuania"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 142.67,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 148.74,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 152.97,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 160.08,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 167.17,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 168.74,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 173.22,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 179.48,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 184.34,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 188.17,
+     "Country": "Luxembourg"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 125.06,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 127.57,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 129.81,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 133.01,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 130.82,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 134.42,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 137.52,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 138.99,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 139.69,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 144.76,
+     "Country": "Malta"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 137.84,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 141.11,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 144.59,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 147.44,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 153.34,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 159.47,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 168.82,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 175.2,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 182.98,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 188.44,
+     "Country": "Netherlands"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 131.85,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 135.02,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 138.71,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 139.66,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 144.7,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 150.95,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 156.26,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 161.14,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 165.94,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 169.63,
+     "Country": "Austria"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 151.67,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 154.34,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 153.61,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 157.69,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 161.7,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 166.4,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 171.3,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 175.96,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 182.64,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 188.31,
+     "Country": "Portugal"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 132.99,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 135.56,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 135.65,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 138.43,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 142.65,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 149.21,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 153.15,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 160.26,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 166.78,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 172.56,
+     "Country": "Slovenia"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 143.02,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 143.75,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 145.93,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 147.53,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 145.81,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 150.57,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 157.66,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 163.28,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 166.46,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 175.62,
+     "Country": "Slovakia"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 104.28,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 105.36,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 105.79,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 106.95,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 108.57,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 111.18,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 110.92,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 111.12,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 112.23,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 113.65,
+     "Country": "Finland"
+   },
+   {
+     "Date": "2020-Q1",
+     "Value": 153.06,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2020-Q2",
+     "Value": 156.3,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2020-Q3",
+     "Value": 159.19,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2020-Q4",
+     "Value": 162.62,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2021-Q1",
+     "Value": 166.26,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2021-Q2",
+     "Value": 175,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2021-Q3",
+     "Value": 180.92,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2021-Q4",
+     "Value": 188.09,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2022-Q1",
+     "Value": 196.07,
+     "Country": "Iceland"
+   },
+   {
+     "Date": "2022-Q2",
+     "Value": 211.23,
+     "Country": "Iceland"
+   }
+  ]
+  
+    },
+  
+    
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "Date", "type": "nominal"},
+      "y": {"field": "Value", "type": "quantitative"}
+    }
+  }
+  

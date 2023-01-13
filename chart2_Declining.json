@@ -1,0 +1,275 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "background": {"signal": "null"},
+    "padding": 5,
+    "width": 700,
+    "height": 700,
+    "title": {
+      "text": "Declining populations",
+      "subtitle": "Cumulative % change in population. Source: UN.",
+      "subtitleFontStyle": "Graphik",
+      "subtitleFontSize": 20,
+      "anchor": "start",
+      "color": "white",
+      "subtitleColor": "white"
+    },
+    "style": "cell",
+    "data": [
+      {
+        "name": "source_0",
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/data/demographicsUNPopChange.csv",
+        "format": {"type": "csv", "parse": {"Year": "date"}, "delimiter": ","}
+      }
+    ],
+    "marks": [
+      {
+        "name": "child__layer_S_Korea_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "S Korea"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; S Korea: \" + (format(datum[\"S Korea\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "S Korea"},
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"S Korea\"]) && isFinite(+datum[\"S Korea\"])"
+            }
+          }
+        }
+      },
+      {
+        "name": "child__layer_Japan_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "Japan"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Japan: \" + (format(datum[\"Japan\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "Japan"},
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"Japan\"]) && isFinite(+datum[\"Japan\"])"
+            }
+          }
+        }
+      },
+      {
+        "name": "child__layer_UK_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "UK"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; UK: \" + (format(datum[\"UK\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "UK"},
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"UK\"]) && isFinite(+datum[\"UK\"])"
+            }
+          }
+        }
+      },
+      {
+        "name": "child__layer_Italy_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "Italy"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Italy: \" + (format(datum[\"Italy\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "Italy"},
+            
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"Italy\"]) && isFinite(+datum[\"Italy\"])"
+            }
+          }
+        }
+      },
+      {
+        "name": "child__layer_Spain_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "Spain"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Spain: \" + (format(datum[\"Spain\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "Spain"},
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"Spain\"]) && isFinite(+datum[\"Spain\"])"
+            }
+          }
+        }
+      },
+      {
+        "name": "child__layer_France_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "France"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; France: \" + (format(datum[\"France\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "France"},
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"France\"]) && isFinite(+datum[\"France\"])"
+            }
+          }
+        }
+      },
+      {
+        "name": "child__layer_US_marks",
+        "type": "line",
+        "style": ["line"],
+        "sort": {"field": "datum[\"Year\"]"},
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "strokeWidth": {"value": 2},
+            "stroke": {"scale": "color", "value": "US"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; US: \" + (format(datum[\"US\"], \"\"))"
+            },
+            "x": {"scale": "x", "field": "Year"},
+            "y": {"scale": "y", "field": "US"},
+            "defined": {
+              "signal": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"US\"]) && isFinite(+datum[\"US\"])"
+            }
+          }
+        }
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "time",
+        "titleColor": "white",
+        "domain": {"data": "source_0", "field": "Year"},
+        "range": [0, {"signal": "width"}]
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "domain": {
+          "data": "source_0",
+          "fields": ["S Korea", "Japan", "UK", "Italy", "Spain", "France", "US"]
+        },
+        "range": [{"signal": "height"}, 0],
+        "nice": true,
+        "zero": true
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "titleColor":"white",
+        "domain": {
+          "fields": [
+            ["S Korea"],
+            ["Japan"],
+            ["UK"],
+            ["Italy"],
+            ["Spain"],
+            ["France"],
+            ["US"]
+          ]
+        },
+        "range": [
+          "red",
+          "yellow",
+          "orange",
+          "lightgrey",
+          "lightblue",
+          "pink",
+          "lightgreen"
+        ]
+       
+        
+      }
+    ],
+    "axes": [
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "gridScale": "y",
+        "grid": null,
+        "tickCount": {"signal": "ceil(width/40)"},
+        "domain": false,
+        "labels": false,
+        "aria": false,
+        "maxExtent": 0,
+        "minExtent": 0,
+        "ticks": false,
+        "zindex": 0,
+        "labelColor":"white"
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "gridScale": "x",
+        "grid": null,
+        "tickCount": {"signal": "ceil(height/40)"},
+        "domain": false,
+        "labels": false,
+        "aria": false,
+        "maxExtent": 0,
+        "minExtent": 0,
+        "ticks": false,
+        "zindex": 0
+      },
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "grid": false,
+        "title": "Year",
+        "titleColor": "white",
+        "labelFlush": true,
+        "labelColor":"white",
+        "labelOverlap": true,
+        "tickCount": {"signal": "ceil(width/40)"},
+        "zindex": 0
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "grid": false,
+        "labelOverlap": true,
+        "labelColor":"white",
+        "tickCount": {"signal": "ceil(height/40)"},
+        "zindex": 0
+      }
+    ],
+    "legends": [{"stroke": "color", "symbolType": "stroke", "labelColor": "white", "labelFontSize": 15}]
+    }
+    

@@ -1,0 +1,98 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "background": {"signal": "null"},
+    "padding": 5,
+    "width": 700,
+    "height": 700,
+    "title": {
+      "text": "IMF Lending Outstanding ",
+      "subtitle": "Loans issued to all members, 1984-2022. Source: IMF",
+      "subtitleFontStyle": "Graphik",
+      "subtitleFontSize": 20,
+      "anchor": "start",
+      "color": "white",
+      "subtitleColor":"white"
+    },
+    "style": "cell",
+    "data": [
+      {
+        "name": "source_0",
+        "url": "https://raw.githubusercontent.com/av1vs/av1vs.github.io/6bc5f600d6df2492aa419be3e60ee969500bee12/chart3data.csv",
+        "format": {"type": "csv", "parse": {"Year": "date"}, "delimiter": ","},
+        "transform": [
+          {
+            "type": "filter",
+            "expr": "(isDate(datum[\"Year\"]) || (isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]))) && isValid(datum[\"Totals\"]) && isFinite(+datum[\"Totals\"])"
+          }
+        ]
+      }
+    ],
+    "marks": [
+      {
+        "name": "marks",
+        "type": "rect",
+        "style": ["bar"],
+        "from": {"data": "source_0"},
+        "encode": {
+          "update": {
+            "fill": {"value": "pink"},
+            "ariaRoleDescription": {"value": "bar"},
+            "description": {
+              "signal": "\"Year: \" + (timeFormat(datum[\"Year\"], '%b %d, %Y')) + \"; Total $bn: \" + (format(datum[\"Totals\"], \"\"))"
+            },
+            "xc": {"scale": "x", "field": "Year"},
+            "width": {"value": 5},
+            "y": {"scale": "y", "field": "Totals"},
+            "y2": {"scale": "y", "value": 0}
+          }
+        }
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "time",
+        "domain": {"data": "source_0", "field": "Year", "labelColor": "white"},
+        "range": [0, {"signal": "width"}],
+        "padding": 5
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "labelColor": "white",
+        "domain": {"data": "source_0", "field": "Totals"},
+        "range": [{"signal": "height"}, 0],
+        "nice": true,
+        "zero": true
+      }
+    ],
+    "axes": [
+      {
+        "scale": "x",
+        "orient": "bottom",
+        "grid": false,
+        "title": "Year",
+        "titleColor": "white",
+        "labelAngle": 45,
+        "ticks": false,
+        "labelAlign": "left",
+        "labelBaseline": "top",
+        "labelFlush": true,
+        "labelColor": "white",
+        "labelOverlap": true,
+        "tickCount": {"signal": "ceil(width/40)"},
+        "zindex": 0
+      },
+      {
+        "scale": "y",
+        "orient": "left",
+        "grid": false,
+        "title": "Total $bn",
+        "titleColor": "white",
+        "labelOverlap": true,
+        "labelColor": "white",
+        "tickCount": {"signal": "ceil(height/40)"},
+        "zindex": 0
+      }
+    ]
+  }
