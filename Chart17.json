@@ -16,7 +16,7 @@
     "data": [
       {
         "name": "source_0",
-        "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/week7datageo.json",
+        "url": https://raw.githubusercontent.com/avivsaban/1/main/week7datageo.json",
         "format": {"property": "features", "type": "json", "parse": {}},
         "transform": [
           {
