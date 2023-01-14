@@ -13,6 +13,7 @@
     height: 50px;
 }
 
+
 .dropdown::before {
     content: "";
     position: absolute;
@@ -102,3 +103,14 @@ a {
       right: 0;
       background: #222222;
       padding: 7%; } }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+    @media screen and (max-width: 667px) {
+        img {
+          max-width: 50%;
+          height: auto;
+        }}
