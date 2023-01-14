@@ -103,3 +103,19 @@
           max-width: 50%;
           height: auto;
         }}
+
+@media screen and (max-width: 667px) {
+    h2 {
+      font-size: 60px;
+      font-size: 16vw; }
+    h3 {
+      font-size: 24px;
+      font-size: 6.4vw; }
+    p {
+      font-size: 18px;
+      font-size: 4.8vw; }
+    .about {
+      left: 0;
+      right: 0;
+      background: #222222;
+      padding: 7%; } }
