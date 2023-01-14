@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 700,
     "height": 700,
+    "autosize": "fit",
     "title": {
       "text": "Declining populations",
       "subtitle": "Cumulative % change in population. Source: UN.",
