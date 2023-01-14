@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 600,
     "height":700,
+    "autosize": "fit",
     "title": {
       "text": "United Kingdom Map",
       "subtitle": "United Kingdom by Local Authority Area. Source: ONS",
