@@ -10,14 +10,14 @@
       "subtitleFontStyle": "italic",
       "subtitleFontSize": 10,
       "anchor": "start",
-      "color": "white",
-      "subtitleColor": "white"
+      "color": "black",
+      "subtitleColor": "black"
     },
     "data": [
       {
         "name": "source_0",
-        "url": https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/week7datageo.json",
-        "format": {"property": "features", "type": "json", "parse": {}},
+        "url": "https://raw.githubusercontent.com/avivsaban/1/main/week7datageo.json",
+        "format": {"property": "features", "type": "json", "parse": {}}, 
         "transform": [
           {
             "type": "formula",
@@ -43,8 +43,8 @@
         "from": {"data": "source_0"},
         "encode": {
           "update": {
-            "fill": {"value": "null"},
-            "stroke": {"value": "white"},
+            "fill": "black",
+            "stroke": {"value": "black"},
             "strokeWidth": {"value": 0.25},
             "tooltip": {
               "signal": "{\"Local Authority Area\": isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"]}"
