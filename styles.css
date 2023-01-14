@@ -276,159 +276,136 @@ svg {
     font-style: normal; }
 
 
-#GraphContainer1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1px;
-}
-
-#GraphContainer2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1px;
-}
-
-#GraphContainer3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1px;
-}
-
-.Container {
-  margin: auto;
-  width:50%;
-  justify-content: center;
-  align-content: center;
-}
-
-#Chart1 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart2 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart3 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart4 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart5 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart6 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart7 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart8 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart9 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart10 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart11 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart12 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart13 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart14 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart15 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart16 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart17 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart18 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart19 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart20 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart21 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
-
-#Chart22 {
-  width:100%;
-  margin: auto;
-  display:block;
-}
+    @media screen and (max-width: 667px) {
+      #Chart1 {
+        width: 300px;
+        height: auto;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart2 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart3 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart4 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart5 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart6 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart7 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart8 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart9 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart10 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart11 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart12 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart13 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart14 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart15 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart16 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart17 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart18 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart19 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart20 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart21 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      }
+      
+      #Chart22 {
+        width: 300px;
+        margin: auto;
+        display:block;
+      } }
