@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 700,
     "height": 700,
+    "autosize": "fit",
     "title": {
       "text": "Average weekly household expenditure in the UK (£)",
       "subtitle": ["From the financial year ending 2019 to 2021. Source: ONS"],
