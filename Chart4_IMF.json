@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 700,
     "height": 700,
+    "autosize": "fit",
     "title": {
       "text": "IMF lending outstanding relative to global GDP ",
       "subtitle": "Credit outstanding to all members, SDRs (%), Source: IMF and World Bank",
