@@ -171,10 +171,6 @@ b {
     background: #100c08;
     padding: 7%; } }
 
-img {
-  width: 100%;
-  height: auto;
-}
     .dropdown {
   position: relative;
   width: 230px;
