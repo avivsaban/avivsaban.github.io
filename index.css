@@ -7,9 +7,8 @@
 
 .dropdown {
     position: fixed;
-    top: 0.5px;
-    left: 92.25%;
-    margin-top: 15px;
+    top: 2%;
+    right: 2%;
     width: 140px;
     height: 50px;
 }
@@ -88,3 +87,18 @@ a {
 }
 
 
+@media screen and (max-width: 667px) {
+    h2 {
+      font-size: 60px;
+      font-size: 16vw; }
+    h3 {
+      font-size: 24px;
+      font-size: 6.4vw; }
+    p {
+      font-size: 18px;
+      font-size: 4.8vw; }
+    .about {
+      left: 0;
+      right: 0;
+      background: #222222;
+      padding: 7%; } }
