@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 350,
     "height": 350,
+    "autosize": "fit",
     "title": {
       "text": "Human hair",
       "subtitle": "Data source: ONS (2022)",
