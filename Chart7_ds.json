@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 700,
     "height": 700,
+    "autosize": "fit",
     "title": {
       "text": "Dead Sea surface area (km2) since 1930",
       "subtitle": "1930-2016. Source: ISRAMAR (2016)",
