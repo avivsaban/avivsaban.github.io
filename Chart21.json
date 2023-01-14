@@ -4,6 +4,7 @@
   "padding": 5,
   "width": 700,
   "height": 700,
+  "autosize": "fit",
   "title": {
       "text": "Relationship between students in post-compulsory education* and disposable income in European countries",
       "subtitle": ["* as a % of the total population of post-compulsory school age. Source: Eurostat"],
