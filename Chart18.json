@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 600,
     "height":700,
+    "autosize": "fit",
     "title": {
       "text": "Average weekly earnings in the United Kingdom",
       "subtitle": "By Local authority area. Source: ONS",
