@@ -4,6 +4,7 @@
     "padding": 5,
     "width": 350,
     "height": 350,
+    "autosize": "fit",
     "title": {
       "text": "Trees and their seeds",
       "subtitle": "Data source: ONS (2022)",
