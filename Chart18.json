@@ -1,111 +1,112 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "background": {"signal": "null"},
-    "padding": 5,
-    "width": 600,
-    "height":700,
-    "autosize": "fit",
-    "title": {
-      "text": "Average weekly earnings in the United Kingdom",
-      "subtitle": "By Local authority area. Source: ONS",
-      "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10,
-      "anchor": "start",
-      "color": "white",
-      "subtitleColor": "#white"
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": {"signal": "null"},
+  "padding": 5,
+  "width": 600,
+  "height": 700,
+  "autosize": "fit",
+  "title": {
+    "text": "Average weekly earnings in the United Kingdom",
+    "subtitle": "By Local authority area. Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "white",
+    "subtitleColor": "#white"
+  },
+  "data": [
+    {
+      "name": "source_1",
+      "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/map.json",
+      "format": {"property": "features", "type": "json"}
     },
-    "data": [
-      {
-        "name": "source_1",
-        "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/week7datageo.json",
-        "format": {"property": "features", "type": "json"}
-      },
-      {
-        "name": "source_0",
-        "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/wk7final.csv",
-        "format": {"type": "csv"},
-        "transform": [
-          {"type": "formula", "expr": "toNumber(yearSelector)", "as": "yearS"},
-          {"type": "filter", "expr": "datum.yearS == datum.Year"},
-          {
-            "type": "lookup",
-            "from": "source_1",
-            "key": "properties.LAD13NM",
-            "fields": ["Local Authority"],
-            "values": ["properties", "type", "geometry"]
-          },
-          {
-            "type": "formula",
-            "expr": "datum[\"properties\"] && datum[\"properties\"][\"LAD13NM\"]",
-            "as": "properties.LAD13NM"
-          },
-          {
-            "type": "filter",
-            "expr": "isValid(datum[\"Value\"]) && isFinite(+datum[\"Value\"])"
-          }
-        ]
-      }
-    ],
-    "projections": [
-      {
-        "name": "projection",
-        "size": {"signal": "[width, height]"},
-        "fit": {"signal": "data('source_0')"},
-        "type": "mercator"
-      }
-    ],
-    "signals": [
-      {
-        "name": "yearSelector",
-        "value": 2022,
-        "bind": {
-          "input": "range",
-          "min": 2008,
-          "max": 2022,
-          "step": 1,
-          "name": "Year:"
-        }
-      }
-    ],
-    "marks": [
-      {
-        "name": "marks",
-        "type": "shape",
-        "style": ["geoshape"],
-        "from": {"data": "source_0"},
-        "encode": {
-          "update": {
-            "stroke": {"value": "white"},
-            "strokeWidth": {"value": 0.2},
-            "fill": {"scale": "color", "field": "Value"},
-            "tooltip": {
-              "signal": "{\"Local authority area\": isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"], \"Average weekly earnings\": isValid(datum[\"Value\"]) ? datum[\"Value\"] : \"\"+datum[\"Value\"]}"
-            },
-            "ariaRoleDescription": {"value": "geoshape"},
-            "description": {
-              "signal": "\"Value: \" + (format(datum[\"Value\"], \"\")) + \"; Local authority area: \" + (isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"]) + \"; Median House Price: \" + (isValid(datum[\"Value\"]) ? datum[\"Value\"] : \"\"+datum[\"Value\"])"
-            }
-          }
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/wk7final.csv",
+      "format": {"type": "csv"},
+      "transform": [
+        {"type": "formula", "expr": "toNumber(yearSelector)", "as": "yearS"},
+        {"type": "filter", "expr": "datum.yearS == datum.Year"},
+        {
+          "type": "lookup",
+          "from": "source_1",
+          "key": "properties.LAD13NM",
+          "fields": ["Local Authority"],
+          "values": ["properties", "type", "geometry"]
         },
-        "transform": [{"type": "geoshape", "projection": "projection"}]
+        {
+          "type": "formula",
+          "expr": "datum[\"properties\"] && datum[\"properties\"][\"LAD13NM\"]",
+          "as": "properties.LAD13NM"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Value\"]) && isFinite(+datum[\"Value\"])"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {"signal": "[width, height]"},
+      "fit": {"signal": "data('source_0')"},
+      "type": "mercator"
+    }
+  ],
+  "signals": [
+    {
+      "name": "yearSelector",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2008,
+        "max": 2022,
+        "step": 1,
+        "name": "Year:"
       }
-    ],
-    "scales": [
-      {
-        "name": "color",
-        "type": "linear",
-        "domain": {"data": "source_0", "field": "Value"},
-        "range": {"scheme": "bluepurple"},
-        "interpolate": "hcl",
-        "zero": false
-      }
-    ],
-    "legends": [
-      {
-        "direction": "vertical",
-        "orient": "right",
-        "fill": "color",
-        "gradientLength": {"signal": "clamp(height, 64, 200)"}
-      }
-    ]
-  }
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "shape",
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "black"},
+          "strokeWidth": {"value": 0.2},
+          "fill": {"scale": "color", "field": "Value"},
+          "tooltip": {
+            "signal": "{\"Local authority area\": isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"], \"Average weekly earnings\": isValid(datum[\"Value\"]) ? datum[\"Value\"] : \"\"+datum[\"Value\"]}"
+          },
+          "ariaRoleDescription": {"value": "geoshape"},
+          "description": {
+            "signal": "\"Value: \" + (format(datum[\"Value\"], \"\")) + \"; Local authority area: \" + (isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"]) + \"; Median House Price: \" + (isValid(datum[\"Value\"]) ? datum[\"Value\"] : \"\"+datum[\"Value\"])"
+          }
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "source_0", "field": "Value"},
+      "range": {"scheme": "bluepurple"},
+      "interpolate": "hcl",
+      "zero": false
+    }
+  ],
+  "legends": [
+    {
+      "direction": "vertical",
+      "labelColor": "white",
+      "orient": "right",
+      "fill": "color",
+      "gradientLength": {"signal": "clamp(height, 64, 200)"}
+    }
+  ]
+}
