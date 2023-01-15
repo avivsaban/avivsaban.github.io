@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "background":"white",
+    "background": {"signal": "null"},
     "padding": 5,
     "height": 600,
     "width": 600,
@@ -10,10 +10,10 @@
       "subtitle": "Quarterly Index, (2015=100), SOURCE: EUROSTAT",
       "subtitleFontStyle": "Italic",
       "subtitleFontSize": 10,
-      "subtitleColor":"black",
+      "subtitleColor":"white",
       "textColor":"white",
       "anchor": "start",
-      "color": "black"
+      "color": "white"
     },
     "style": "cell",
     "data": [
@@ -284,10 +284,10 @@
         "grid": false,
         "gridColor": "white",
         "title": "Date",
-        "titleColor": "black",
+        "titleColor": "white",
         "labelAlign": "right",
         "labelAngle": 270,
-        "labelColor": "black",
+        "labelColor": "white",
         "labelBaseline": "middle",
         "zindex": 0
       },
@@ -297,11 +297,11 @@
         "grid": false,
         "title": "Value",
         "labelOverlap": true,
-        "labelColor": "black",
-        "titleColor": "black",
+        "labelColor": "white",
+        "titleColor": "white",
         "tickCount": {"signal": "ceil(height/40)"},
         "zindex": 0
       }
     ],
-    "legends": [{"orient": "right", "stroke": "color", "symbolType": "stroke", "labelColor":"black"}]
+    "legends": [{"orient": "right", "stroke": "color", "symbolType": "stroke", "labelColor":"white"}]
   }
