@@ -7,9 +7,9 @@
     "autosize": "fit",
     "title": {
       "text": "IMF lending outstanding relative to global GDP ",
-      "subtitle": "Credit outstanding to all members, SDRs (%), Source: IMF and World Bank",
-      "subtitleFontStyle": "Graphik",
-      "subtitleFontSize": 20,
+      "subtitle": "Credit outstanding for member nations. Source: IMF &  World Bank",
+      "subtitleFontStyle": "Italic",
+      "subtitleFontSize": 10,
       "anchor": "start",
       "textColor":"white",
       "subtitleColor": "white",
