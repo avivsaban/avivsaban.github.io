@@ -1,62 +1,62 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "background": {"signal": "null"},
-    "padding": 5,
-    "width": 600,
-    "height":700,
-    "autosize": "fit",
-    "title": {
-      "text": "United Kingdom Map",
-      "subtitle": "United Kingdom by Local Authority Area. Source: ONS",
-      "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10,
-      "anchor": "start",
-      "color": "black",
-      "subtitleColor": "black"
-    },
-    "data": [
-      {
-        "name": "source_0",
-        "url": "https://raw.githubusercontent.com/avivsaban/1/main/week7datageo.json",
-        "format": {"property": "features", "type": "json", "parse": {}}, 
-        "transform": [
-          {
-            "type": "formula",
-            "expr": "datum[\"properties\"] && datum[\"properties\"][\"LAD13NM\"]",
-            "as": "properties.LAD13NM"
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": {"signal": "null"},
+  "padding": 5,
+  "width": 600,
+  "height":700,
+  "autosize": "fit",
+  "title": {
+    "text": "United Kingdom Map",
+    "subtitle": "United Kingdom by Local Authority Area. Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "white",
+    "subtitleColor": "white"
+  },
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/avivsaban/1/main/week7datageo.json",
+      "format": {"property": "features", "type": "json", "parse": {}}, 
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "datum[\"properties\"] && datum[\"properties\"][\"LAD13NM\"]",
+          "as": "properties.LAD13NM"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {"signal": "[width, height]"},
+      "fit": {"signal": "data('source_0')"},
+      "type": "mercator"
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "shape",
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "fill": {"value": "white"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 0.25},
+          "tooltip": {
+            "signal": "{\"Local Authority Area\": isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"]}"
+          },
+          "ariaRoleDescription": {"value": "geoshape"},
+          "description": {
+            "signal": "\"Local Authority Area: \" + (isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"])"
           }
-        ]
-      }
-    ],
-    "projections": [
-      {
-        "name": "projection",
-        "size": {"signal": "[width, height]"},
-        "fit": {"signal": "data('source_0')"},
-        "type": "mercator"
-      }
-    ],
-    "marks": [
-      {
-        "name": "marks",
-        "type": "shape",
-        "style": ["geoshape"],
-        "from": {"data": "source_0"},
-        "encode": {
-          "update": {
-            "fill": "black",
-            "stroke": {"value": "black"},
-            "strokeWidth": {"value": 0.25},
-            "tooltip": {
-              "signal": "{\"Local Authority Area\": isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"]}"
-            },
-            "ariaRoleDescription": {"value": "geoshape"},
-            "description": {
-              "signal": "\"Local Authority Area: \" + (isValid(datum[\"properties.LAD13NM\"]) ? datum[\"properties.LAD13NM\"] : \"\"+datum[\"properties.LAD13NM\"])"
-            }
-          }
-        },
-        "transform": [{"type": "geoshape", "projection": "projection"}]
-      }
-    ]
-  }
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    }
+  ]
+}
