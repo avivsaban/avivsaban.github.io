@@ -109,8 +109,31 @@ a {
         height: auto;
       }
 
-    @media screen and (max-width: 667px) {
+      @media screen and (max-width: 667px) {
         img {
-          max-width: 50%;
+          max-width: 100%;
+          height: auto;
+        }
+        table {
+          max-width: 100%;
           height: auto;
         }}
+
+        table {
+          border:1px solid #b3adad;
+          border-collapse:collapse;
+          padding:5px;
+        }
+        table th {
+          border:1px solid #b3adad;
+          padding:2px;
+          background: #f0f0f0;
+          color: #313030;
+        }
+        table td {
+          border:1px solid #b3adad;
+          text-align:center;
+          padding:5px;
+          background: #ffffff;
+          color: #313030;
+        }
