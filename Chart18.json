@@ -23,7 +23,7 @@
     {
       "name": "source_0",
       "url": "https://raw.githubusercontent.com/avivsaban/avivsaban.github.io/main/wk7final.csv",
-      "format": {"type": "csv"},
+      "format": {"type": "csv", "delimiter": ","},
       "transform": [
         {"type": "formula", "expr": "toNumber(yearSelector)", "as": "yearS"},
         {"type": "filter", "expr": "datum.yearS == datum.Year"},
