@@ -3,7 +3,7 @@
   "background": {"signal": "null"},
   "padding": 5,
   "width": 600,
-  "height":700,
+  "height": 700,
   "autosize": "fit",
   "title": {
     "text": "United Kingdom Map",
@@ -18,7 +18,7 @@
     {
       "name": "source_0",
       "url": "https://raw.githubusercontent.com/avivsaban/1/main/week7datageo.json",
-      "format": {"property": "features", "type": "json", "parse": {}}, 
+      "format": {"property": "features", "type": "json", "parse": {}},
       "transform": [
         {
           "type": "formula",
