@@ -401,8 +401,48 @@ svg {
         cursor: pointer; }
 
 
-        @media screen and (max-width: 667px) {
-          img {
-            max-width: 50%;
-            height: auto;
-          }}
+ @media screen and (max-width: 667px) {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        table {
+          max-width: 100%;
+          height: auto;
+        }}
+
+@media screen and (max-width: 667px) {
+    h2 {
+      font-size: 60px;
+      font-size: 16vw; }
+    h3 {
+      font-size: 24px;
+      font-size: 6.4vw; }
+    p {
+      font-size: 18px;
+      font-size: 4.8vw; }
+    .about {
+      left: 0;
+      right: 0;
+      background: #222222;
+      padding: 7%; } }
+
+        table {
+          border:1px solid #b3adad;
+          border-collapse:collapse;
+          padding:5px;
+        }
+        table th {
+          border:1px solid #b3adad;
+          padding:2px;
+          background: #f0f0f0;
+          color: #313030;
+        }
+        table td {
+          border:1px solid #b3adad;
+          text-align:center;
+          padding:5px;
+          background: #ffffff;
+          color: #313030;
+        }
+
