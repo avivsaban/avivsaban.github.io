@@ -1,0 +1,109 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "background": {"signal": "null"},
+    "padding": 5,
+    "width": 700,
+    "height":700,
+    "title": {
+      "text": "Components of Consumer Price Index 2022",
+      "subtitle": "Includes owner occupiers' housing costs (CPIH). Source: ONS",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "white",
+      "subtitleColor": "#white"
+    },
+  "data": [
+    {
+      "name": "source_0",
+      "values": [
+        {"Item": "Food and non-alcoholic beverages", "CPIH Weight": 9.3},
+        {"Item": "Alcohol and tobacco", "CPIH Weight": 3.9},
+        {"Item": "Clothing and footwear", "CPIH Weight": 4.9},
+        {"Item": "Housing and household services", "CPIH Weight": 31.4},
+        {"Item": "Furniture and household goods", "CPIH Weight": 6.3},
+        {"Item": "Health", "CPIH Weight": 1.8},
+        {"Item": "Transport", "CPIH Weight": 11.1},
+        {"Item": "Communication", "CPIH Weight": 1.9},
+        {"Item": "Recreation and culture", "CPIH Weight": 10.5},
+        {"Item": "Education", "CPIH Weight": 2.6},
+        {"Item": "Restaurants and hotels", "CPIH Weight": 9},
+        {"Item": "Miscellaneous goods and services", "CPIH Weight": 7.3}
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": [],
+          "field": "CPIH Weight",
+          "sort": {"field": ["Item"], "order": ["ascending"]},
+          "as": ["CPIH Weight_start", "CPIH Weight_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"CPIH Weight\"]) && isFinite(+datum[\"CPIH Weight\"])"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "arc",
+      "style": ["arc"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "fill": {"scale": "color", "field": "Item"},
+          "tooltip": [
+            {"field": "CPIH Weight", "type": "quantative"}
+        ],
+          "description": {
+            "signal": "\"CPIH Weight: \" + (format(datum[\"CPIH Weight\"], \"\")) + \"; Item: \" + (isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"])"
+          },
+          "x": {"signal": "width", "mult": 0.5},
+          "y": {"signal": "height", "mult": 0.5},
+          "outerRadius": {"signal": "min(width,height)/2"},
+          "innerRadius": {"value": 0},
+          "startAngle": {"scale": "theta", "field": "CPIH Weight_end"},
+          "endAngle": {"scale": "theta", "field": "CPIH Weight_start"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "theta",
+      "type": "linear",
+      "domain": {
+        "data": "data_0",
+        "fields": ["CPIH Weight_start", "CPIH Weight_end"]
+      },
+      "range": [0, 6.283185307179586],
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "data_0", "field": "Item", "sort": true},
+      "range": [
+        "#F8EDE3",
+        "#DFD3C3",
+        "#D0B8A8",
+        "#85586F",
+        "#65647C",
+        "#8B7E74",
+        "#C7BCA1",
+        "#F1D3B3",
+        "#F5EBE0",
+        "#F0DBDB",
+        "#DBA39A",
+        "#E97777",
+        "#FF9F9F"]    }
+  ],
+  "legends": [{"fill": "color", "symbolType": "circle", "title": "Item", "labelColor": "white", "labelFontSize": "12", "titleColor": "white"}]
+}
