@@ -4,7 +4,6 @@
     "padding": 5,
     "height": 600,
     "width": 600,
-    "autosize": "fit",
     "title": {
       "text": "Eurozone house price index",
       "subtitle": "Quarterly Index, (2015=100), SOURCE: EUROSTAT",
