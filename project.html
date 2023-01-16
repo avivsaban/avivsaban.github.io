@@ -62,10 +62,10 @@
   </div>
  
  
-  <div class="about">
- 
-	  <p> Student number: 2034682</p>
+<div class="about">
 
+	<p>Student number: 2034682</p>
+	
     <h2>Introducing the project</h2>
     
     <p><h3>In 2020, the Abraham Accords were signed between Israel, the UAE and Bahrain, with Morocco and Sudan subsequently joining the agreement. </h3></p>
@@ -73,8 +73,6 @@
     <pi><img src="aa.jpg" alt="Reg_picHW" width=100% height=auto></pi>
 
     <p><h3>The Abraham Accords were the first time some signatory nations officially recognised Israel and established diplomatic relations with the country, enabling open trade and cooperation in various fields.</h3></p>
-
-    <p><h3>There are other Arab nations which do not recognise Israel officially but are expected to imminently normalise relations with Israel, including Saudi Arabia and Oman. </h3></p>
       
     <p><h3>The aim of this project is to understand the factors which impact the extent to which citizens of Arab countries are disposed to their countries establishing diplomatic ties with Israel.</h3></p>
       
@@ -82,17 +80,13 @@
 
     <p><h3> The most crucial dataset used in this project are the results of the <a href= "https://arabcenterdc.org/resource/preview-arab-opinion-index-2022/">2022 Arab Opinion Index</a> created by the Arab Center for Research and Policy Studies.</h3></p>
 
-    <p><h3> The data used from the index in the project is the percentage of respondents who answered "support" when asked if they support or oppose the diplomatic recognition of Israel by their country.</h3></p>
-
-    <p><h3> The index is based on the findings of a face-to-face survey of 33,000 individuals conducted between June and December 2022 in 14 Arab countries.</h3></p>
-
     <h2>The results of the Arab Opinion Index</h2>
 
     <p><h3> Below are the percentages of citizens in the 14 countries surveyed who support diplomatic recognition of Israel by their country.</h3></p>
 
     <div class="chart" id="Chart24"> </div>
 
-    <p><h3>The results of the survey were published as an image of a stacked bar chart on the Arab Center’s website, so I manually added the data to an excel file and exported it as a csv file. I then used Python to convert the data into the JSON format and pasted the JSON data in-line in the html code for the above bar chart.</h3></p>
+    <p><h3>The results of the survey were published as an image on the Arab Center’s website, so I manually added the data to an excel file and used Python to convert the data into the JSON format.</h3></p>
    
     <h2>The initial regressions</h2>
 
@@ -110,10 +104,6 @@
         &nbsp;
 
         <pi><img src="3.jpg" alt="Reg_picHW" width=100% height=auto></pi>
-
-  <p><h3>The r squared variable seen on the charts above is a statistical measure of fit that indicates how much of the variation in the level of support is explained by the parameter on the x axis. </h3></p>
-
-  <p><h3>The chart examining the relationship between Jewish population in 1972 and the level of the support has an r squared value of 0.49  compared to 0.05 for HDI and support, suggesting that Jewish population in 1972 is a better indicator of support for diplomatic recognition of Israel than HDI. </h3></p>
 
   <p><h3>The above regressions were conducted using machine learning and python in Google Colab.<h3></p>
 
@@ -133,8 +123,6 @@
 
     <p><h3>For example, all Arab nations that have signed peace or normalisation agreements with Israel to date are not democratic regimes,  so non-democratic countries are awarded a score of 1 for the "Democracy" parameter in the below table based on the assumption that non-democratic regimes are more likely to normalise relations with Israel.</h3></p>
   
-    <p><h3>An additional benefit of the index for the project is that it enables an understanding of the impact of qualitative factors that cannot be included in a regression (e.g. whether or not a country has diplomatic relations with Iran) on the propensity for diplomatic relations with Israel.</h3></p>
-
 	<pi><img src="table2.jpg" alt="Reg_picHW" width=100% height=auto></pi> <!--pi-->
 
   <p><h3> The data for relations with Iran, percentage of Muslims in the country, government regime type, banning of Muslim brotherhood and history of war with Israel was obtained from Wikipedia. Data for the dsitance from Israel was obtained from GlobeFeed.com<h3></p>
@@ -161,13 +149,11 @@
       
           <p><h3> The strong positive correlation found in the PROFNI regression for the 10 countries is an exciting result. In terms of further work to be done, the PROFNI score can be calculated based on a broader range of parameters related to the economic, demographic and political features of the 14 survey countries, which will hopefully increase the r squared found in the regression and correct the scores for the four outlier countries to more accurately reflect their propensity for diplomatic relations with Israel.<h3></p>
       
-          <h2>A note on automation and replicability</h2>
-
-        <p><h3> A significant proportion of the data  used in this project is based on historical data (e.g. Jewish populations in the 20th century) or is based on qualitative data, making the project very replicable in terms of sourcing data. In terms of the use of APIs, I found that there was limited scope or justifification for the use of APIs in this project. The only pieces of data that regularly update used in this project are the annually-published HDI scores from the UNDP and GDP per capita obtained from the World Bank. Updating this data if necessary on an annual basis for only 14 countries is a quick and simple task. <p><h3> 
-
         <h2> References</h2>
 
         <h3> For the references for this project, please click <a href="References.html" > here </a>.</h3>
+
+		<p> Word count: 793</p>
 
 
     </body>
@@ -184,3 +170,4 @@ vegaEmbed('#Chart24', myChart24);
  
  
 </html>
+ 
